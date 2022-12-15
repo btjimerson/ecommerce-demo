@@ -1,0 +1,20 @@
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: default
+  namespace: catalog-demo
+spec:
+  mtls:
+    mode: STRICT
+---
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: rabbitmq
+  namespace: catalog-demo
+spec:
+  selector:
+    matchLabels:
+      app: rabbitmq
+  mtls:
+    mode: DISABLE

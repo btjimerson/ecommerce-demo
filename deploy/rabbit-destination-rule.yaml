@@ -1,0 +1,10 @@
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: rabbitmq-istio-mtls
+  namespace: catalog-demo
+spec:
+  host: rabbitmq
+  trafficPolicy:
+    tls:
+      mode: DISABLE
