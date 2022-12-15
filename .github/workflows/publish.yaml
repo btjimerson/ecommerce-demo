@@ -34,7 +34,7 @@ jobs:
         mvn clean package -DskipTests=true -f ${{ env.PAYMENTS_NAME }}/
   publish:
     runs-on: ubuntu-latest
-    depends-on: [build-artifacts]
+    needs: [build-artifacts]
     steps:
     - name: Set up Docker buildx
       uses: docker/setup-buildx-action@v2
