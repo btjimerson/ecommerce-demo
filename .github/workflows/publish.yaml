@@ -44,7 +44,7 @@ jobs:
       id: meta-catalog
       uses: docker/metadata-action@v4.1.1
       with:
-        images: ${{ env.REGISTRY }}/${{ env.IMAGE_BASE_NAME}}
+        images: ${{ env.REGISTRY }}/${{ env.IMAGE_BASE_NAME}}/${{ env.CATALOG_NAME }}
         tags: |
           type=ref,event=branch
           type=semver,pattern={{major}}.{{minor}}.{{patch}}
